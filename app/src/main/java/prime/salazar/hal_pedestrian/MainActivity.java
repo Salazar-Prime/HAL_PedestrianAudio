@@ -75,6 +75,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         paintBlock.setColor(Color.RED);
         paint.setColor(Color.GREEN);
         imageView.setImageBitmap(bitmap);
+        
+        // Assume thisActivity is the current activity
+        int permissionCheck = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.WRITE_CALENDAR);
+        Log.v("Audioi permision",""+permissionCheck);
     }
 
     private class RecordAudio extends AsyncTask<Void, double[], Void> {
